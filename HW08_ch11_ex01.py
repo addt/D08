@@ -10,7 +10,14 @@
 
 # Body
 def store_to_dict():
-    pass
+    words_dict = dict()
+    file_handle = open('words.txt','r')
+    for i in file_handle:
+        for j in i.split():
+            words_dict[str(j)] = 1
+    file_handle.close()
+    return words_dict
+    
 
 
 ###############################################################################
