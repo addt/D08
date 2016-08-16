@@ -37,16 +37,23 @@ def histogram_old(s):
 
 
 def histogram_new(s):
-    ...
+    d = dict()
+    for i in s:
+        d[i] = d.get(i,0) + 1
+    return d
+    
 
 
 def get_pledge_list():
     """ Opens pledge.txt and converts to a list, each item is a word in
     the order it appears in the original file. returns the list.
     """
-    # Your code here.
-    pass
-    # return pledge_list (uncomment this)
+    words_list = []
+    file_handle = open('pledge.txt','r')
+    for i in file_handle.readlines():
+        for j in i.split():
+            words_list += [j]
+    return words_list
 
 
 ###############################################################################
